@@ -16,6 +16,7 @@ class HomeTableViewController: UITableViewController {
     }
     
     
+    
     var tweetArray = [NSDictionary]()
     var numberOfTweets: Int!
     
@@ -23,9 +24,15 @@ class HomeTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadTweet()
         myRefreshControl.addTarget(self, action: #selector(loadTweet), for: .valueChanged)
-        tableView.refreshControl = myRefreshControl
+        self.tableView.refreshControl = myRefreshControl
+        self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.estimatedRowHeight = 150
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.loadTweet()
     }
     
     @objc func loadTweet(){
