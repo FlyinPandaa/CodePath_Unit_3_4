@@ -111,8 +111,11 @@
                                                 <constraint firstAttribute="width" constant="30" id="Kj6-4d-0JZ"/>
                                                 <constraint firstAttribute="height" constant="30" id="rs2-gc-1Oz"/>
                                             </constraints>
-                                            <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain" image="retweet-icon"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" image="retweet-icon"/>
+                                            <connections>
+                                                <action selector="retweet:" destination="7ha-mV-hZz" eventType="touchUpInside" id="sgZ-Xm-Q4T"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obR-ZF-XmE" userLabel="favButton">
                                             <rect key="frame" x="281" y="80" width="30" height="30"/>
@@ -120,8 +123,11 @@
                                                 <constraint firstAttribute="width" constant="30" id="jgq-t7-nMi"/>
                                                 <constraint firstAttribute="height" constant="30" id="msJ-EI-MFf"/>
                                             </constraints>
-                                            <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain" image="favor-icon"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" image="favor-icon"/>
+                                            <connections>
+                                                <action selector="favoriteTweet:" destination="7ha-mV-hZz" eventType="touchUpInside" id="fMA-c6-YCJ"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -136,7 +142,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="favoriteButton" destination="obR-ZF-XmE" id="ifD-eA-sjy"/>
                                     <outlet property="profileImage" destination="Dng-iB-ged" id="rBg-Yo-avG"/>
+                                    <outlet property="retweetButton" destination="Vo7-NG-Lpg" id="aJ8-OJ-yD1"/>
                                     <outlet property="tweetContent" destination="s2z-GB-GfV" id="nFd-rJ-FDT"/>
                                     <outlet property="userNameLabel" destination="JED-cH-pAZ" id="r41-V3-9VM"/>
                                 </connections>
